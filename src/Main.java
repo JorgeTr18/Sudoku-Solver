@@ -16,7 +16,14 @@ public class Main {
 				{ 0, 0, 0, 4, 0, 0, 0, 5, 0 }, 
 				{ 9, 0, 3, 0, 2, 0, 0, 0, 0 } };
 		
+		if(validarTablero(tablero)) {
+			System.out.println("Tablero Válido");
+		}else {
+			System.out.println("Tablero no Válido");	
+		}
 		
+		imprimirTablero(tablero);
+
 
 	}
 
@@ -85,7 +92,23 @@ public class Main {
 
 		return true;
 	};
-
+	
+	public static void imprimirTablero(int[][] tablero ) {
+		for (int fila=0; fila<dimensionTablero; fila++) {
+			if(fila%3 == 0) {
+				System.out.println("-------------");
+			}
+			for(int columna=0; columna<dimensionTablero; columna++ ) {
+				if(columna%3 == 0) {
+					System.out.print("|");
+				}
+				System.out.print(tablero[fila][columna]);
+			}
+			System.out.print("|");
+			System.out.println("");
+		}
+		System.out.println("-------------");
+	}
 };
 
 	
