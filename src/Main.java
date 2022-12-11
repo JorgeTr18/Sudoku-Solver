@@ -61,6 +61,30 @@ public class Main {
 				&& !numEnCuadrado(tablero, fila, columna, num));
 	};
 
+	public static boolean validarTablero(int[][] tablero) {
+		for (int fila = 0; fila < dimensionTablero; fila++) {
+			for (int columna = 0; columna < dimensionTablero; columna++) {
+
+				if (tablero[fila][columna] == 0) {
+
+					for (int num = 1; num <= dimensionTablero; num++) {
+						if (posicionValida(tablero, fila, columna, num)) {
+							tablero[fila][columna] = num;
+							if (validarTablero(tablero)) {
+								return true;
+							} else {
+								tablero[fila][columna] = 0;
+							}
+						}
+
+					}
+					return false;
+				}
+			}
+		}
+
+		return true;
+	};
 
 };
 
