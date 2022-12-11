@@ -54,7 +54,14 @@ public class Main {
 			}
 		}
 		return false;
-
+	}
+	
+	public static boolean posicionValida(int[][] tablero, int fila, int columna, int num) {
+		return (!numEnFila(tablero, fila, num) && !numEnColumna(tablero, columna, num)
+				&& !numEnCuadrado(tablero, fila, columna, num));
 	};
+
+
+};
 
 	
